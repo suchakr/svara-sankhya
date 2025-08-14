@@ -51,6 +51,17 @@ Here are a few examples illustrating the counting logic:
 
 ## Installation
 
+### 1. Clone the Repository
+
+First, you need to clone the repository to your local machine. You can do this by running the following command in your terminal:
+
+```sh
+git clone https://github.com/suchakr/svara-sankhya.git
+cd svara-sankhya
+```
+
+### 2. Install Python
+
 This script requires Python 3.6 or higher. If you don't have Python installed, you can download it from the official Python website: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 To check your Python version, run the following command:
