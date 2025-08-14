@@ -1,12 +1,13 @@
 # Svara Sankhya
 
-An initiative to count *aksharas* (syllables) in Devanagari script, particularly for scriptural and poetic texts.
+An initiative to count *aksharas* (syllables) in Devanagari script.
 
 ## Overview
 
 This project provides a command-line tool for analyzing Devanagari text to count *aksharas*. Many traditional texts are structured hierarchically, with divisions like chapters (*kāṇḍa*), sections (*sarga*), etc. The names and depth of these levels can vary from one text to another and must often be inferred.
 
 The fundamental unit for counting is typically a verse (*shloka*) or a block of text, which may be accompanied by a verse number. The goal is to process these units, count the *aksharas* within them, and provide counts that can be aggregated across the text's hierarchy.
+
 
 ## Akshara Counting Methodology
 
@@ -115,18 +116,18 @@ Type | Counted | Count | Chars
 -----------------------------------
 V    | Y       | 1     | य
 V+M  | Y       | 2     | दा
-Sep  | -       | 2     |  
+Sep  | -       | 2     |
 V    | Y       | 3     | य
 V+M  | Y       | 4     | दा
-Sep  | -       | 4     |  
+Sep  | -       | 4     |
 V+M  | Y       | 5     | हि
-Sep  | -       | 5     |  
+Sep  | -       | 5     |
 V    | Y       | 6     | ध
 V+H  | -       | 6     | र्
 V    | Y       | 7     | म
 V+H  | -       | 7     | स्
 V    | Y       | 8     | य
-Sep  | -       | 8     |  
+Sep  | -       | 8     |
 V+H  | -       | 8     | ग्
 V+M  | Y       | 9     | ला
 V+M  | Y       | 10    | नि
@@ -134,13 +135,13 @@ V+H  | -       | 10    | र्
 V    | Y       | 11    | भ
 V    | Y       | 12    | व
 V+M  | Y       | 13    | ति
-Sep  | -       | 13    |  
+Sep  | -       | 13    |
 V+M  | Y       | 14    | भा
 V    | Y       | 15    | र
 V    | Y       | 16    | त
-Sep  | -       | 16    |  
+Sep  | -       | 16    |
 O    | -       | 16    | ।
-Sep  | -       | 16    |  
+Sep  | -       | 16    |
 S    | Y       | 17    | अ
 V+H  | -       | 17    | भ्
 V+M  | Y       | 18    | यु
@@ -153,20 +154,20 @@ V+H  | -       | 22    | र्
 V    | Y       | 23    | म
 V+H  | -       | 23    | स्
 V    | Y       | 24    | य
-Sep  | -       | 24    |  
+Sep  | -       | 24    |
 V    | Y       | 25    | त
 V+M  | Y       | 26    | दा
 V+H  | -       | 26    | त्
 V+M  | Y       | 27    | मा
 V+M  | Y       | 28    | नं
-Sep  | -       | 28    |  
+Sep  | -       | 28    |
 V+M  | Y       | 29    | सृ
 V+M  | Y       | 30    | जा
 V+H  | -       | 30    | म्
 V    | Y       | 31    | य
 V    | Y       | 32    | ह
 V+H  | -       | 32    | म्
-Sep  | -       | 32    |  
+Sep  | -       | 32    |
 Sep  | -       | 32    | ॥
 -----------------------------------
 ```
@@ -186,7 +187,8 @@ Processing files in: examples
 
 Here is an example of the output when running the `--explain` flag:
 
-```
+```sh
+$ python svara_counter.py --check --explain
 Legend: S=Svara, V=Vyanjana, M=Matra, H=Halant, Sep=Separator, O=Other
         V+M=Vyanjana+Matra, V+H=Vyanjana+Halant
 --------------------
@@ -210,5 +212,7 @@ V+M  | Y       | 5     | हि
 ```
 
 ## Aggregation
+
+*(Note: This feature is not yet implemented and represents a future goal for the project.)*
 
 The syllable counts from individual verses or text blocks can be summed up to provide totals for any hierarchical level defined in the source text (e.g., total *aksharas* per section, per chapter, etc.).
