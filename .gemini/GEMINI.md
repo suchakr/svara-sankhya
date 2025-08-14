@@ -8,7 +8,7 @@ Svara Sankhya is a Python command-line tool designed to count *aksharas* (syllab
 
 The core logic is based on identifying vowels (*svara*) and consonants (*vyanjana*) in the Devanagari script. Each vowel sound is considered a single *akshara*.
 
-The project consists of a single Python script, `svara_counter.py`, which uses the `argparse` library for command-line argument parsing.
+The project consists of a single Python script, `svara-sankhya`, which uses the `argparse` library for command-line argument parsing.
 
 ## Building and Running
 
@@ -20,37 +20,37 @@ The script can be run from the command line using `python`.
 
 **Show help:**
 ```sh
-python svara_counter.py --help
+python svara-sankhya --help
 ```
 
 **Run predefined checks:**
 ```sh
-python svara_counter.py --check
+python svara-sankhya --check
 ```
 
 **Run predefined checks with explanation:**
 ```sh
-python svara_counter.py --check --explain
+python svara-sankhya --check --explain
 ```
 
 **Process a string:**
 ```sh
-python svara_counter.py -i "some Devanagari text"
+python svara-sankhya -i "some Devanagari text"
 ```
 
 **Process a single file:**
 ```sh
-python svara_counter.py -p <file_path>
+python svara-sankhya -p <file_path>
 ```
 
 **Process a directory:**
 ```sh
-python svara_counter.py -p <directory_path>
+python svara-sankhya -p <directory_path>
 ```
 
 **Process files using a glob pattern:**
 ```sh
-python svara_counter.py -p '*.txt'
+python svara-sankhya -p '*.txt'
 ```
 
 ## Development Conventions

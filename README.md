@@ -72,7 +72,7 @@ python --version
 
 ## Usage
 
-The script `svara_counter.py` is a command-line tool that can process Devanagari text from a string, a file, a directory, or a glob pattern.
+The script `svara-sankhya` is a command-line tool that can process Devanagari text from a string, a file, a directory, or a glob pattern.
 
 ### Running the script
 
@@ -80,37 +80,37 @@ The script can be run from the command line using `python`.
 
 **Show help:**
 ```sh
-python svara_counter.py --help
+python svara-sankhya --help
 ```
 
 **Run predefined checks:**
 ```sh
-python svara_counter.py --check
+python svara-sankhya --check
 ```
 
 **Run predefined checks with explanation:**
 ```sh
-python svara_counter.py --check --explain
+python svara-sankhya --check --explain
 ```
 
 **Process a string:**
 ```sh
-python svara_counter.py -i "some Devanagari text"
+python svara-sankhya -i "some Devanagari text"
 ```
 
 **Process a single file:**
 ```sh
-python svara_counter.py -p <file_path>
+python svara-sankhya -p <file_path>
 ```
 
 **Process a directory:**
 ```sh
-python svara_counter.py -p <directory_path>
+python svara-sankhya -p <directory_path>
 ```
 
 **Process files using a glob pattern:**
 ```sh
-python svara_counter.py -p '*.txt'
+python svara-sankhya -p '*.txt'
 ```
 
 ## More Examples
@@ -120,14 +120,14 @@ Here are some more examples of how to use the script with the files in the `exam
 ### 1. Process a single file
 
 ```sh
-$ python svara_counter.py -p examples/gita_4_7.txt
+$ python svara-sankhya -p examples/gita_4_7.txt
    32 | gita_4_7.txt
 ```
 
 ### 2. Process a single file with explanation
 
 ```sh
-$ python svara_counter.py -p examples/gita_4_7.txt --explain
+$ python svara-sankhya -p examples/gita_4_7.txt --explain
 Legend: S=Svara, V=Vyanjana, M=Matra, H=Halant, Sep=Separator, O=Other
         V+M=Vyanjana+Matra, V+H=Vyanjana+Halant
 --------------------
@@ -198,7 +198,7 @@ Sep  | -       | 32    | ॥
 ### 3. Process a directory
 
 ```sh
-$ python svara_counter.py -p examples
+$ python svara-sankhya -p examples
 Processing files in: examples
    32 | gita_2_47.txt
    32 | gita_4_7.txt
@@ -211,7 +211,7 @@ Processing files in: examples
 Here is an example of the output when running the `--explain` flag:
 
 ```sh
-$ python svara_counter.py --check --explain
+$ python svara-sankhya --check --explain
 Legend: S=Svara, V=Vyanjana, M=Matra, H=Halant, Sep=Separator, O=Other
         V+M=Vyanjana+Matra, V+H=Vyanjana+Halant
 --------------------
