@@ -4,7 +4,19 @@ An initiative to count *aksharas* (syllables) in Devanagari script.
 
 ## Overview
 
-This project provides a command-line tool for analyzing Devanagari text to count *aksharas*. Many traditional texts are structured hierarchically, with divisions like chapters (*kāṇḍa*), sections (*sarga*), etc. The names and depth of these levels can vary from one text to another and must often be inferred.
+This project provides a command-line tool for analyzing Devanagari text to count *aksharas*.
+
+### Current Capabilities
+*   Count *aksharas* in a Devanagari string, a single file, or a directory of files.
+*   Provide a detailed explanation of the counting process for each character.
+*   Handle Unicode Devanagari characters.
+
+### Future Capabilities
+*   Aggregate *akshara* counts across a text's hierarchy (e.g., by chapter, section, etc.).
+
+The following sections detail the capabilities of the script.
+
+Many traditional texts are structured hierarchically, with divisions like chapters (*kāṇḍa*), sections (*sarga*), etc. The names and depth of these levels can vary from one text to another and must often be inferred.
 
 The fundamental unit for counting is typically a verse (*shloka*) or a block of text, which may be accompanied by a verse number. The goal is to process these units, count the *aksharas* within them, and provide counts that can be aggregated across the text's hierarchy.
 
