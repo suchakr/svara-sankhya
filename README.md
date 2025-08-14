@@ -36,42 +36,57 @@ Here are a few examples illustrating the counting logic:
 *   **Akshara Count**: 5
     *Note: In this example, `हः` which is `ह्` + `अः` contributes one to the count, as `अः` is the vowel sound.*
 
+## Installation
+
+This script requires Python 3.6 or higher. If you don't have Python installed, you can download it from the official Python website: [https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+To check your Python version, run the following command:
+
+```sh
+python --version
+```
+
 ## Usage
 
 The script `svara_counter.py` is a command-line tool that can process Devanagari text from a string, a file, a directory, or a glob pattern.
 
-### Command-Line Options
+### Running the script
 
-*   `-h`, `--help`: Show the help message and exit.
-*   `-c`, `--check`: Run a check with predefined shlokas.
-*   `-i INPUT`, `--input INPUT`: A single Devanagari string to process.
-*   `-p PATH`, `--path PATH`: Path to a file, directory, or a glob pattern (e.g., `'*.txt'`). When using a glob pattern, it's recommended to quote it to prevent shell expansion.
-*   `--explain`: Show a step-by-step explanation of the counting process.
+The script can be run from the command line using `python`.
 
-### Examples
-
-**1. Count aksharas from a string:**
-
+**Show help:**
 ```sh
-python3 svara_counter.py -i "यदा यदा हि धर्मस्य"
+python svara_counter.py --help
 ```
 
-**2. Count aksharas from a single file:**
-
+**Run predefined checks:**
 ```sh
-python3 svara_counter.py -p my_text_file.txt
+python svara_counter.py --check
 ```
 
-**3. Count aksharas from all `.txt` files in a directory:**
-
+**Run predefined checks with explanation:**
 ```sh
-python3 svara_counter.py -p 'shlokas/*.txt'
+python svara_counter.py --check --explain
 ```
 
-**4. Run the predefined checks with a detailed explanation:**
-
+**Process a string:**
 ```sh
-python3 svara_counter.py --check --explain
+python svara_counter.py -i "some Devanagari text"
+```
+
+**Process a single file:**
+```sh
+python svara_counter.py -p <file_path>
+```
+
+**Process a directory:**
+```sh
+python svara_counter.py -p <directory_path>
+```
+
+**Process files using a glob pattern:**
+```sh
+python svara_counter.py -p '*.txt'
 ```
 
 ## Example Output
