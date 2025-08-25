@@ -8,7 +8,7 @@ Svara Sankhya is a Python command-line tool designed to count *aksharas* (syllab
 
 The core logic is based on identifying vowels (*svara*) and consonants (*vyanjana*) in the Devanagari script. Each vowel sound is considered a single *akshara*.
 
-The project consists of a single Python script, `svara-sankhya`, which uses the `argparse` library for command-line argument parsing.
+The project consists of a single Python script, `svara-sankhya.py`, which uses the `argparse` library for command-line argument parsing.
 
 ## Building and Running
 
@@ -20,37 +20,37 @@ The script can be run from the command line using `python`.
 
 **Show help:**
 ```sh
-python svara-sankhya --help
+python svara-sankhya.py --help
 ```
 
 **Run predefined checks:**
 ```sh
-python svara-sankhya --check
+python svara-sankhya.py --check
 ```
 
 **Run predefined checks with explanation:**
 ```sh
-python svara-sankhya --check --explain
+python svara-sankhya.py --check --explain
 ```
 
 **Process a string:**
 ```sh
-python svara-sankhya -i "some Devanagari text"
+python svara-sankhya.py -i "some Devanagari text"
 ```
 
 **Process a single file:**
 ```sh
-python svara-sankhya -p <file_path>
+python svara-sankhya.py -p <file_path>
 ```
 
 **Process a directory:**
 ```sh
-python svara-sankhya -p <directory_path>
+python svara-sankhya.py -p <directory_path>
 ```
 
 **Process files using a glob pattern:**
 ```sh
-python svara-sankhya -p '*.txt'
+python svara-sankhya.py -p '*.txt'
 ```
 
 ## Development Conventions
@@ -60,3 +60,5 @@ python svara-sankhya -p '*.txt'
 *   The script is self-contained and has no external dependencies.
 *   The code includes docstrings to explain the purpose of each function.
 *   The `--explain` flag provides a detailed, human-readable explanation of the counting logic, which is useful for debugging and verification.
+
+

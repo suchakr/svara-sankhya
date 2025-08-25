@@ -72,7 +72,7 @@ python --version
 
 ## Usage
 
-The script `svara-sankhya` is a command-line tool that can process Devanagari text from a string, a file, a directory, or a glob pattern.
+The script `svara-sankhya.py` is a command-line tool that can process Devanagari text from a string, a file, a directory, or a glob pattern.
 
 ### Running the script
 
@@ -80,37 +80,37 @@ The script can be run from the command line using `python`.
 
 **Show help:**
 ```sh
-python svara-sankhya --help
+python svara-sankhya.py --help
 ```
 
 **Run predefined checks:**
 ```sh
-python svara-sankhya --check
+python svara-sankhya.py --check
 ```
 
 **Run predefined checks with explanation:**
 ```sh
-python svara-sankhya --check --explain
+python svara-sankhya.py --check --explain
 ```
 
 **Process a string:**
 ```sh
-python svara-sankhya -i "some Devanagari text"
+python svara-sankhya.py -i "some Devanagari text"
 ```
 
 **Process a single file:**
 ```sh
-python svara-sankhya -p <file_path>
+python svara-sankhya.py -p <file_path>
 ```
 
 **Process a directory:**
 ```sh
-python svara-sankhya -p <directory_path>
+python svara-sankhya.py -p <directory_path>
 ```
 
 **Process files using a glob pattern:**
 ```sh
-python svara-sankhya -p '*.txt'
+python svara-sankhya.py -p '*.txt'
 ```
 
 ## More Examples
@@ -120,14 +120,14 @@ Here are some more examples of how to use the script with the files in the `exam
 ### 1. Process a single file
 
 ```sh
-$ python svara-sankhya -p examples/gita_4_7.txt
+$ python svara-sankhya.py -p examples/gita_4_7.txt
    32 | gita_4_7.txt
 ```
 
 ### 2. Process a single file with explanation
 
 ```sh
-$ python svara-sankhya -p examples/gita_4_7.txt --explain
+$ python svara-sankhya.py -p examples/gita_4_7.txt --explain
 Legend: S=Svara, V=Vyanjana, M=Matra, H=Halant, Sep=Separator, O=Other
         V+M=Vyanjana+Matra, V+H=Vyanjana+Halant
 --------------------
@@ -193,6 +193,52 @@ V+H  | -       | 32    | म्
 Sep  | -       | 32    |
 Sep  | -       | 32    | ॥
 -----------------------------------
+```
+
+### 3. Process a directory
+
+```sh
+$ python svara-sankhya.py -p examples
+Processing files in: examples
+   32 | gita_2_47.txt
+   32 | gita_4_7.txt
+    2 | rama.txt
+    3 | sundara.txt
+```
+
+## Example Output
+
+Here is an example of the.output when running the `--explain` flag:
+
+```sh
+$ python svara-sankhya.py --check --explain
+Legend: S=Svara, V=Vyanjana, M=Matra, H=Halant, Sep=Separator, O=Other
+        V+M=Vyanjana+Matra, V+H=Vyanjana+Halant
+--------------------
+Running predefined checks...
+====================
+Source: Bhagavad Gita 4.7
+Text: "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥"
+Akshara Count: 32
+
+Explanation for: "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥..."
+Type | Counted | Count | Chars
+----------------------------------------------------------------------
+V    | Y       | 1     | य
+V+M  | Y       | 2     | दा
+Sep  | -       | 2     |
+V    | Y       | 3     | य
+V+M  | Y       | 4     | दा
+Sep  | -       | 4     |
+V+M  | Y       | 5     | हि
+... (output truncated for brevity)
+```
+
+## Aggregation
+
+*(Note: This feature is not yet implemented and represents a future goal for the project.)*
+
+The syllable counts from individual verses or text blocks can be summed up to provide totals for any hierarchical level defined in the source text (e.g., total *aksharas* per section, per chapter, etc.).
 ```
 
 ### 3. Process a directory
